@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import warnings
 import re
-from sklearn.metrics.pairwise import cosine_similarity
 import tempfile
 import os
 from fuzzywuzzy import fuzz
