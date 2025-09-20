@@ -2,7 +2,7 @@ streamlit==1.28.0
 pandas==2.1.0
 numpy==1.24.3
 pyresparser==1.0.6
-scikit-learn\
+scikit-learn
 spacy==3.5.0
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl
 fuzzywuzzy==0.18.0
