@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from pyresparser import ResumeParser
 import warnings
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -30,25 +29,6 @@ def load_nlp_model():
         return nlp
     except OSError:
         st.error("spaCy English model not found. Please install it using: python -m spacy download en_core_web_sm")
-        return None
-
-def extract_skills_from_resume(uploaded_file):
-    """Extract skills from uploaded resume using pyresparser"""
-    try:
-        # Save uploaded file temporarily
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
-            tmp_file.write(uploaded_file.getvalue())
-            tmp_file_path = tmp_file.name
-        
-        # Parse resume
-        data = ResumeParser(tmp_file_path).get_extracted_data()
-        
-        # Clean up temporary file
-        os.unlink(tmp_file_path)
-        
-        return data
-    except Exception as e:
-        st.error(f"Error parsing resume: {str(e)}")
         return None
 
 def parse_multi_select_field(field_value):
